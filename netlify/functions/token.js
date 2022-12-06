@@ -39,7 +39,7 @@ exports.handler = async (event, context)=>{
 	var transactionToken
 
     
-	snap.createTransaction(parameter)
+	await snap.createTransaction(parameter)
 	    .then((transaction)=>{
 	        // transaction token
 	        transactionToken = transaction.token;
