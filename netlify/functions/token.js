@@ -38,14 +38,14 @@ exports.handler = async (event, context) => {
 	};
 	var transactionToken
 
-    const response = JSON.stringify({ token: transactionToken })
-
+    
 	snap.createTransaction(parameter)
 	    .then((transaction)=>{
 	        // transaction token
 	        transactionToken = transaction.token;
 	        console.log('transactionToken:',transactionToken);
 	    })
+        const response = JSON.stringify({ token: transactionToken,halo:"halo" })
         return {
             statusCode: 200,
             body: response,
