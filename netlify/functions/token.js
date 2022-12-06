@@ -23,7 +23,7 @@ exports.handler = async (event, context)=>{
 	 
 	let parameter = {
 	    "transaction_details": {
-	        "order_id": "YOUR-ORDERID-123456",
+	        "order_id": "YOUR-ORDERID-123456" + Math.random(),
 	        "gross_amount": totalHarga
 	    },
 	    "credit_card":{
