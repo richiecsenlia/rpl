@@ -45,7 +45,7 @@ exports.handler = function (event, context){
 	//         transactionToken = transaction.token;
 	//         console.log('transactionToken:',transactionToken);
 	//     })
-    const response = JSON.stringify({"halo":"halo","harga":totalHarga })
+    const response = JSON.stringify({"halo":"halo"})
     return {
         statusCode: 200,
         body: response,
