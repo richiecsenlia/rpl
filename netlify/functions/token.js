@@ -1,3 +1,5 @@
+
+
 const querystring = require("querystring");
 
 exports.handler = async (event, context) => {
@@ -35,6 +37,9 @@ exports.handler = async (event, context) => {
 	    }
 	};
 	var transactionToken
+
+    const response = JSON.stringify({ token: transactionToken })
+
 	snap.createTransaction(parameter)
 	    .then((transaction)=>{
 	        // transaction token
@@ -43,7 +48,11 @@ exports.handler = async (event, context) => {
 	    })
         return {
             statusCode: 200,
-            body: {'token':transactionToken}
+            body: response,
+            headers: {
+                'Content-Type': 'application/json; charset=utf-8',
+                'Access-Control-Allow-Origin': '*',
+            },
           };
     
   };
