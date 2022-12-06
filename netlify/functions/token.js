@@ -45,6 +45,8 @@ exports.handler = async (event, context)=>{
 	        transactionToken = transaction.token;
 	        console.log('transactionToken:',transactionToken);
 	    })
+    console.log(transactionToken)
+    console.log('halo')
     const response = JSON.stringify({"halo":"halo","tes":"tes","token1":totalHarga,"tes2":"tes2","token":transactionToken})
     return {
         statusCode: 200,
