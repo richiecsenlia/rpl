@@ -2,17 +2,17 @@
 
 const querystring = require("querystring");
 
-exports.handler = async (event, context) => {
+exports.handler = function (event, context){
     // Only allow POST
-    if (event.httpMethod !== "POST") {
-      return { statusCode: 405, body: "Method Not Allowed" };
-    }
+    // if (event.httpMethod !== "POST") {
+    //   return { statusCode: 405, body: "Method Not Allowed" };
+    // }
   
     // When the method is POST, the name will no longer be in the event’s
     // queryStringParameters – it’ll be in the event body encoded as a query string
-    const params = querystring.parse(event.body);
-    const totalHarga = params.totalHarga
-  
+    // const params = querystring.parse(event.body);
+    const totalHarga = event.queryStringParameters.totalHarga
+    console.log(totalHarga)
     const midtransClient = require('midtrans-client');
 	// Create Snap API instance
 	let snap = new midtransClient.Snap({
