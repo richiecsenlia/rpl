@@ -37,17 +37,18 @@ exports.handler = async (event, context)=>{
 	    }
 	};
 	var transactionToken
-
+	var transactionUrl
     
 	await snap.createTransaction(parameter)
 	    .then((transaction)=>{
 	        // transaction token
 	        transactionToken = transaction.token;
+			transactionUrl = transaction.redirect_url;
 	        console.log('transactionToken:',transactionToken);
 	    })
     console.log(transactionToken)
     console.log('halo')
-    const response = JSON.stringify({"token":transactionToken})
+    const response = JSON.stringify({"token":transactionToken,"url":transactionUrl})
     return {
         statusCode: 200,
         body: response,
