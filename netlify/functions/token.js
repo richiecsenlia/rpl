@@ -45,10 +45,10 @@ exports.handler = function (event, context){
 	        transactionToken = transaction.token;
 	        console.log('transactionToken:',transactionToken);
 	    })
-    const response = JSON.stringify({ token: transactionToken,halo:"halo" })
+    const response = JSON.stringify({halo:"halo" })
     return {
         statusCode: 200,
-        body: "halo",
+        body: response,
         headers: {
             'Content-Type': 'application/json; charset=utf-8',
             'Access-Control-Allow-Origin': '*',
