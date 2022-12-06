@@ -36,16 +36,16 @@ exports.handler = async (event, context)=>{
 	        "phone": "08111222333"
 	    }
 	};
-	// var transactionToken
+	var transactionToken
 
     
-	// snap.createTransaction(parameter)
-	//     .then((transaction)=>{
-	//         // transaction token
-	//         transactionToken = transaction.token;
-	//         console.log('transactionToken:',transactionToken);
-	//     })
-    const response = JSON.stringify({"halo":"halo"})
+	snap.createTransaction(parameter)
+	    .then((transaction)=>{
+	        // transaction token
+	        transactionToken = transaction.token;
+	        console.log('transactionToken:',transactionToken);
+	    })
+    const response = JSON.stringify({"halo":"halo","token":tokenHarga,"token":transactionToken})
     return {
         statusCode: 200,
         body: response,
