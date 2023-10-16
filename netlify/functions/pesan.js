@@ -1,7 +1,7 @@
 const API_ENDPOINT = 'https://courageous-basbousa-3ef9e8.netlify.app/.netlify/functions/token';
 
 export default async (request, context) => {
-    body = request.json()
+    let body = request.json()
     console.log(body)
     console.log(body['harga'])
   try {
