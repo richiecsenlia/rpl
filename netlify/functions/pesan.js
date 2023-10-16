@@ -3,7 +3,7 @@ const API_ENDPOINT = 'https://courageous-basbousa-3ef9e8.netlify.app/.netlify/fu
 export default async (request, context) => {
     let body = await request.json()
     let sum = 0
-    for(let i = 0;i<body['harga'].length();i++){
+    for(let i = 0;i<body['harga'].length;i++){
         sum = sum + body['harga'][i]
     }
     console.log(body)
